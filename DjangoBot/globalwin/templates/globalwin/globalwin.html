@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LK</title>
+    <link rel="stylesheet" href="LKmain.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Боковая панель -->
+        <div class="sidebar">
+            <img src="img.jpg" alt="Фото пользователя" class="user-photo">
+            <button class="tab-button" onclick="showContent('statistics')">Статистика</button>
+            <button class="tab-button" onclick="showContent('tasks')">Задачи</button>
+            <button class="tab-button" onclick="showContent('settings')">Настройки</button>
+        </div>
+
+        <!-- Основное окно с переключаемым контентом -->
+        <div class="content">
+            <div id="statistics" class="tab-content">Тут будет отображаться статистика</div>
+            <div id="tasks" class="tab-content" style="display: none;">Тут будут задачи</div>
+            <div id="settings" class="tab-content" style="display: none;">Тут будут настройки</div>
+        </div>
+    </div>
+
+    <script src="lkscript.js"></script>
+</body>
+</html>

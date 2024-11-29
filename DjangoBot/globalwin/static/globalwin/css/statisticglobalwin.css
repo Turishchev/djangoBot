@@ -1,0 +1,106 @@
+/* Устанавливаем базовый шрифт для всего тела документа */
+body {
+	background-color: #181818;
+	color: #e0e0e0;
+	font-family: Arial, sans-serif;
+	/* Устанавливаем один шрифт для всего */
+	font-size: 16px;
+	/* Устанавливаем общий размер шрифта */
+}
+
+/* Убираем особенности кнопок */
+button {
+	background-color: #252525;
+	color: #EDEDED;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font-family: inherit;
+	/* Наследуем шрифт от родительского элемента */
+	font-size: inherit;
+	/* Наследуем размер шрифта от родительского элемента */
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #777;
+}
+
+/* Стиль для бокового меню */
+.settings-container {
+	display: none;
+	/* Изначально скрыто */
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: #3A3A3A;
+	width: 250px;
+	height: 100%;
+	padding: 20px;
+	z-index: 9999;
+	box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar form {
+	margin-bottom: 20px;
+}
+
+.sidebar label {
+	margin-bottom: 5px;
+}
+
+.sidebar input[type="date"],
+.sidebar input[type="checkbox"] {
+	margin-bottom: 10px;
+}
+
+.checkbox label {
+	margin-bottom: 10px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+}
+
+.buttons button {
+	margin: 5px 0;
+}
+
+/* Тумблер для открытия меню */
+#toggle-menu {
+	background-color: #252525;
+	color: #EDEDED;
+	padding: 15px;
+	font-size: 16px;
+	/* Равный размер шрифта с остальными элементами */
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#toggle-menu:hover {
+	background-color: #777;
+}
+
+/* Для показа бокового меню */
+.settings-container.active {
+	display: block;
+}
+
+/* Медиа-запрос для мобильной версии */
+@media (max-width: 768px) {
+	.settings-container {
+		width: 100%;
+	}
+
+	.sidebar {
+		padding: 10px;
+	}
+}

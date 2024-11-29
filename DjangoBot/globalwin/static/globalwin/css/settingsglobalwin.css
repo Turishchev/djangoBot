@@ -1,0 +1,87 @@
+/* Общие стили для страницы */
+body {
+	background-color: #181818;
+	color: #e0e0e0;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+/* Контейнер настроек */
+.settings-container {
+	background-color: #3A3A3A;
+	padding: 20px;
+	border-radius: 8px;
+	width: 100%;
+	max-width: 400px;
+	/* Устанавливаем максимальную ширину для контейнера */
+	margin: 50px auto;
+	box-sizing: border-box;
+	/* Учитываем padding в ширине */
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #EDEDED;
+}
+
+/* Блоки с полями формы */
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	color: #EDEDED;
+	margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+	width: 100%;
+	/* Заставляем поля ввода занимать всю доступную ширину */
+	padding: 10px;
+	background-color: #252525;
+	color: #EDEDED;
+	border: 1px solid #555;
+	border-radius: 5px;
+	box-sizing: border-box;
+	/* Учитываем padding в ширине */
+}
+
+.form-group input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+.form-group button {
+	width: 48%;
+	/* Чтобы кнопки были по бокам друг друга */
+	padding: 10px;
+	background-color: #252525;
+	color: #EDEDED;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	/* Учитываем padding в ширине */
+}
+
+.form-group button:hover {
+	background-color: #777;
+}
+
+/* Стили для кнопок */
+button[type="submit"] {
+	background-color: #4CAF50;
+}
+
+button[type="reset"] {
+	background-color: #f44336;
+}
+
+button:hover {
+	background-color: #777;
+}
