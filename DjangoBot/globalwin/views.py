@@ -5,5 +5,5 @@ def index(request):
     return render(request, "globalwin/globalwin.html ")
 
 
-def about(request):
-    return render(request, "globalwin/settingsglobalwin.html")
+def settings(request):
+    return render(request, "globalwin/settings.html")
