@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'globalwin/css/tasks.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Левый блок: задачи -->
+        <div class="task-list">
+            <h3>Задачи</h3>
+            <ul id="tasks"></ul>
+            <form id="task-form">
+                <input type="text" id="task-name" placeholder="Введите задачу">
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <!-- Правый блок: подзадачи -->
+        <div class="task-details">
+            <div id="task-detail">
+                <p>Выберите задачу, чтобы увидеть подзадачи.</p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'globalwin/js/tasks.js' %}"></script>
+</body>
+</html>

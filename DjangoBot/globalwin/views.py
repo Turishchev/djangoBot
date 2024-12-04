@@ -7,3 +7,10 @@ def index(request):
 
 def settings(request):
     return render(request, "globalwin/settings.html")
+
+def statistics(request):
+    return render(request, "globalwin/statistics.html")
+
+
+def tasks(request):
+    return render(request, "globalwin/tasks.html")
