@@ -29,6 +29,16 @@ function renderTasks() {
         const li = document.createElement('li');
         li.textContent = task.name;
         li.onclick = () => showTaskDetail(index);
+
+        // Добавляем кнопку для удаления задачи
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Удалить';
+        deleteBtn.onclick = (e) => {
+            e.stopPropagation(); // предотвращаем вызов onclick задачи
+            deleteTask(index);
+        };
+
+        li.appendChild(deleteBtn);
         taskList.appendChild(li);
     });
 }
@@ -45,6 +55,13 @@ taskForm.onsubmit = (e) => {
     }
 };
 
+// Удаление задачи
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    saveTasks();
+    renderTasks();
+}
+
 // Отображение подзадач выбранной задачи
 function showTaskDetail(index) {
     selectedTaskIndex = index;
@@ -52,11 +69,16 @@ function showTaskDetail(index) {
     taskDetail.innerHTML = `
         <h3>${task.name}</h3>
         <ul>
-            ${task.subtasks.map(subtask => `<li>${subtask}</li>`).join('')}
+            ${task.subtasks.map((subtask, subtaskIndex) => `
+                <li>
+                    ${subtask}
+                    <button onclick="deleteSubtask(${index}, ${subtaskIndex})">Удалить</button>
+                </li>
+            `).join('')}
         </ul>
         <form id="subtask-form">
             <input type="text" id="subtask-name" placeholder="Введите подзадачу">
-            <button type="submit">Добавить</button>
+            <button type="submit" id="add-subtask-btn">Добавить подзадачу</button>
         </form>
     `;
 
@@ -69,6 +91,13 @@ function showTaskDetail(index) {
             showTaskDetail(index);
         }
     };
+}
+
+// Удаление подзадачи
+function deleteSubtask(taskIndex, subtaskIndex) {
+    tasks[taskIndex].subtasks.splice(subtaskIndex, 1);
+    saveTasks();
+    showTaskDetail(taskIndex);
 }
 
 // Инициализация
