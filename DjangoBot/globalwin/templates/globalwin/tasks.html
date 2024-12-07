@@ -13,11 +13,15 @@
         <div class="task-list">
             <h3>Задачи</h3>
             <ul id="tasks"></ul>
+            <!-- Форма с отдельным контейнером для поля ввода и кнопки -->
             <form id="task-form">
-                <input type="text" id="task-name" placeholder="Введите задачу" required>
-                <button type="submit">Добавить</button>
+                <div class="input-container">
+                    <input type="text" id="task-name" placeholder="Введите задачу" required>
+                    <button type="submit">Добавить</button>
+                </div>
             </form>
         </div>
+        
         <!-- Правый блок: подзадачи -->
         <div class="task-details">
             <div id="task-detail">

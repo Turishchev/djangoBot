@@ -8,14 +8,14 @@ let selectedTaskIndex = null;
 
 // Загрузка задач из локального файла
 async function loadTasks() {
-    const response = await fetch('tasks.json');
+    const response = await fetch('/tasks.json');
     tasks = await response.json();
     renderTasks();
 }
 
 // Сохранение задач в локальный файл
 async function saveTasks() {
-    await fetch('save_tasks', {
+    await fetch('/save_tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(tasks),
@@ -27,12 +27,14 @@ function renderTasks() {
     taskList.innerHTML = '';
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
+        li.classList.add('task-item');
         li.textContent = task.name;
         li.onclick = () => showTaskDetail(index);
 
-        // Добавляем кнопку для удаления задачи
+        // Кнопка для удаления задачи
         const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Удалить';
+        deleteBtn.textContent = '❌';
+        deleteBtn.classList.add('delete-btn');
         deleteBtn.onclick = (e) => {
             e.stopPropagation(); // предотвращаем вызов onclick задачи
             deleteTask(index);
@@ -68,17 +70,17 @@ function showTaskDetail(index) {
     const task = tasks[index];
     taskDetail.innerHTML = `
         <h3>${task.name}</h3>
-        <ul>
+        <ul class="subtask-list">
             ${task.subtasks.map((subtask, subtaskIndex) => `
-                <li>
+                <li class="subtask-item">
                     ${subtask}
-                    <button onclick="deleteSubtask(${index}, ${subtaskIndex})">Удалить</button>
+                    <button class="delete-btn" onclick="deleteSubtask(${index}, ${subtaskIndex})">❌</button>
                 </li>
             `).join('')}
         </ul>
         <form id="subtask-form">
             <input type="text" id="subtask-name" placeholder="Введите подзадачу">
-            <button type="submit" id="add-subtask-btn">Добавить подзадачу</button>
+            <button type="submit" class="btn">Добавить подзадачу</button>
         </form>
     `;
 
