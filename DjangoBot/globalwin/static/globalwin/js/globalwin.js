@@ -4,4 +4,3 @@ function showContent(tabId) {
 
     document.getElementById(tabId).style.display = 'block';
 }
-
