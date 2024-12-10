@@ -1,42 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Меню настроек</title>
-    {% load static %}
-	<link rel="stylesheet" href="{% static 'globalwin/css/statistics.css' %}">
-</head>
-
-<body>
-
-	<!-- Тумблер для открытия меню -->
-	<button id="toggle-menu">☰ Настройки</button>
-
+{% block content %}
 	<!-- Боковое меню -->
-	<div class="settings-container" id="settings-menu">
-		<div class="sidebar">
-			<form action="/submit" method="post">
-				<label for="start-date">Начальная дата:</label>
-				<input type="date" id="start-date" name="start-date">
+<div class="settings-container" id="settings-menu">
+	<div class="sidebar">
+		<form action="/submit" method="post">
+			<label for="start-date">Начальная дата:</label>
+			<input type="date" id="start-date" name="start-date">
 
-				<label for="end-date">Конечная дата:</label>
-				<input type="date" id="end-date" name="end-date">
-			</form>
+			<label for="end-date">Конечная дата:</label>
+			<input type="date" id="end-date" name="end-date">
+		</form>
 
-			<div class="checkbox">
-				<label><input type="checkbox" name="AllTime"> За весь период</label>
-				<label><input type="checkbox" name="XZ"> Прост</label>
-			</div>
+		<div class="checkbox">
+			<label><input type="checkbox" name="AllTime"> За весь период</label>
+			<label><input type="checkbox" name="XZ"> Прост</label>
+		</div>
 
-			<div class="buttons">
-				<button type="submit">Применить</button>
-				<button type="reset">Сбросить</button>
-			</div>
+		<div class="buttons">
+			<button type="submit">Применить</button>
+			<button type="reset">Сбросить</button>
 		</div>
 	</div>
-    <script src="{% static 'globalwin/js/statistics.js' %}"></script>
-</body>
-
-</html>
+	</div>
+{% endblock content %}

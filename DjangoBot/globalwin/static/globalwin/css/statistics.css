@@ -1,12 +1,3 @@
-/* Устанавливаем базовый шрифт для всего тела документа */
-body {
-	background-color: #181818;
-	color: #e0e0e0;
-	font-family: Arial, sans-serif;
-	/* Устанавливаем один шрифт для всего */
-	font-size: 16px;
-	/* Устанавливаем общий размер шрифта */
-}
 
 /* Убираем особенности кнопок */
 button {
@@ -29,8 +20,8 @@ button:hover {
 
 /* Стиль для бокового меню */
 .settings-container {
-	display: none;
-	/* Изначально скрыто */
+	display: block;
+	/* Теперь меню сразу отображается */
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -71,27 +62,6 @@ button:hover {
 
 .buttons button {
 	margin: 5px 0;
-}
-
-/* Тумблер для открытия меню */
-#toggle-menu {
-	background-color: #252525;
-	color: #EDEDED;
-	padding: 15px;
-	font-size: 16px;
-	/* Равный размер шрифта с остальными элементами */
-	border: none;
-	cursor: pointer;
-	border-radius: 5px;
-}
-
-#toggle-menu:hover {
-	background-color: #777;
-}
-
-/* Для показа бокового меню */
-.settings-container.active {
-	display: block;
 }
 
 /* Медиа-запрос для мобильной версии */

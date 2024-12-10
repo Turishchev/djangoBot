@@ -2,29 +2,35 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>LK</title>
+    <meta name = "viewport" vontent="width=device-width, initial-scale=1.0">
+    <title>Global Win</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'globalwin/css/globalwin.css' %}">
+    <link rel="stylesheet" href="{% static 'globalwin/css/statistics.css' %}">
+    <link rel="stylesheet" href="{% static 'globalwin/css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'globalwin/css/tasks.css' %}">
+
+    <script src="{% static 'globalwin/js/globalwin.js' %}"></script>
+    <script src="{% static 'globalwin/js/statistics.js' %}"></script>
+    <script src="{% static 'globalwin/js/settings.js' %}"></script>
+    <script src="{% static 'globalwin/js/tasks.js' %}"></script>
+    
 </head>
 <body>
     <div class="container">
         <!-- Боковая панель -->
         <div class="sidebar">
             <img alt="Фото пользователя" class="user-photo">
-            <button class="tab-button" onclick="showContent('statistics')">Статистика</button>
-            <button class="tab-button" onclick="showContent('tasks')">Задачи</button>
-            <button class="tab-button" onclick="showContent('settings')">Настройки</button>
+            <button class="tab-button" id="statistics-btn">Статистика</button>
+            <button class="tab-button" id="tasks-btn">Задачи</button>
+            <button class="tab-button" id="settings-btn">Настройки</button>
         </div>
 
         <!-- Основное окно с переключаемым контентом -->
         <div class="content">
-            <div id="statistics" class="tab-content">Тут будет отображаться статистика</div>
-            <div id="tasks" class="tab-content" style="display: none;">Тут будут задачи</div>
-            <div id="settings" class="tab-content" style="display: none;">Тут будут настройки</div>
+           {% block content %}
+           {% endblock content %}
         </div>
     </div>
-    
-    <script src="static/globalwin/js/globalwin.js"></script>
-
 </body>
 </html>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-def index(request):
+def globalwin(request):
     return render(request, "globalwin/globalwin.html ")
 
 

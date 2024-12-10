@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'globalwin/css/tasks.css' %}">
-</head>
-<body>
-    <div class="container">
-        <!-- Левый блок: задачи -->
-        <div class="task-list">
-            <h3>Задачи</h3>
-            <ul id="tasks"></ul>
-            <!-- Форма с отдельным контейнером для поля ввода и кнопки -->
-            <form id="task-form">
-                <div class="input-container">
-                    <input type="text" id="task-name" placeholder="Введите задачу" required>
-                    <button type="submit">Добавить</button>
-                </div>
-            </form>
-        </div>
-        
-        <!-- Правый блок: подзадачи -->
-        <div class="task-details">
-            <div id="task-detail">
-                <p>Выберите задачу, чтобы увидеть подзадачи.</p>
+{% block content %}
+
+
+<div class="container">
+    <!-- Левый блок: задачи -->
+    <div class="task-list">
+        <h3>Задачи</h3>
+        <ul id="tasks"></ul>
+        <!-- Форма с отдельным контейнером для поля ввода и кнопки -->
+        <form id="task-form">
+            <div class="input-container">
+                <input type="text" id="task-name" placeholder="Введите задачу" required>
+                <button type="submit">Добавить</button>
             </div>
+        </form>
+    </div>
+    
+    <!-- Правый блок: подзадачи -->
+    <div class="task-details">
+        <div id="task-detail">
+            <p>Выберите задачу, чтобы увидеть подзадачи.</p>
         </div>
     </div>
-    <script src="{% static 'globalwin/js/tasks.js' %}"></script>
-</body>
-</html>
+</div>
+{% endblock content %}
