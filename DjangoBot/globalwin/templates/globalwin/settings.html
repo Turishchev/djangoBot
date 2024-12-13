@@ -1,43 +1,21 @@
 {% block content %}
 
-<div class="settings-container">
-	<h2>Настройки пользователя</h2>
+<div class="container">
+	<div class="settings-list">
+		<h3>Настройки</h3>
+		<ul id="settings"></ul>
 
-	<form action="/submit" method="post">
-		<div class="form-group">
-			<label for="username">Имя пользователя:</label>
-			<input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
-		</div>
-
-		<div class="form-group">
-			<label for="dob">Год рождения:</label>
-			<input type="number" id="dob" name="dob" placeholder="Введите год рождения" required>
-		</div>
-
-		<div class="form-group">
-			<label for="email">Электронная почта:</label>
-			<input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
-		</div>
-
-		<div class="form-group">
-			<label for="password">Новый пароль:</label>
-			<input type="password" id="password" name="password" placeholder="Введите новый пароль">
-		</div>
-
-		<div class="form-group">
-			<label for="confirm-password">Подтвердите новый пароль:</label>
-			<input type="password" id="confirm-password" name="confirm-password"
-				placeholder="Повторите новый пароль">
-		</div>
-
-		<div class="form-group">
-			<label><input type="checkbox" name="receive-newsletters"> Подписаться на новости</label>
-		</div>
-
-		<div class="form-group">
-			<button type="submit">Сохранить настройки</button>
-			<button type="reset">Сбросить</button>
-		</div>
-	</form>
+		<form id="settings-form">
+			<div class="input-container">
+				<input type="text" id="fio" placeholder="Введите вашу ФИО" required>
+				<input type="text" id="email" placeholder="Введите ваш email" required>
+				<input type="date" id="birthdate" placeholder="Введите вашу Дату рождения"required>
+				<div class="button">
+					<button type="submit">Сбросить</button>
+					<button type="submit">Добавить</button>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 {% endblock content %}

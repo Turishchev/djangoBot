@@ -16,7 +16,6 @@
 
 .task-list {
     width: 30%;
-    /* Левый блок занимает 48% ширины контейнера */
     overflow-y: auto;
     padding: 5px;
 }
