@@ -2,23 +2,24 @@
 	<!-- Боковое меню -->
 <div class="conteiner-stat">
 	<div class="sidebar-stat">
-		<form action="/submit" method="post">
-			<label for="start-date">Начальная дата:</label>
-			<input type="date" id="start-date" name="start-date">
 
-			<label for="end-date">Конечная дата:</label>
-			<input type="date" id="end-date" name="end-date">
-		</form>
+		<label for="start-date">Начальная дата:</label>
+		<input type="date" id="start-date" name="start-date">
 
-		<div class="checkbox">
-			<label><input type="checkbox" name="AllTime"> За весь период</label>
-			<label><input type="checkbox" name="XZ"> Прост</label>
-		</div>
+		<label for="end-date">Конечная дата:</label>
+		<input type="date" id="end-date" name="end-date">
 
-		<div class="buttons">
-			<button type="submit">Применить</button>
-			<button type="reset">Сбросить</button>
+
+		<label><input class="checkbox-stat" type="checkbox" name="AllTime"> За весь период</label>
+		<label><input class="checkbox-stat" type="checkbox" name="XZ"> Прост</label>
+		<div class="stat-buttons">
+			<button class="button-stat" type="submit">Применить</button>
+			<button class="button-stat" type="reset">Сбросить</button>
 		</div>
 	</div>
+	<div class="statistics-graph">
+		{% block graphicks %}
+		{% endblock graphicks %}
 	</div>
+</div>
 {% endblock content %}

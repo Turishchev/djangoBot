@@ -1,9 +1,11 @@
 
-.container {
+.container-tasks {
     display: flex;
     height: 100vh;
+    width: 100%;
     justify-content: space-between;
     padding: 20px;
+    background-color: #252525;
 }
 
 .task-list,

@@ -1,13 +1,109 @@
 .conteiner-stat {
-	background-color: azure;
+	background-color: #333333;
 	display: flex;
 	height: 100%;
 	width: 100%;
 }
 
-.sidebar-stat {
-	background-color: blue;
+
+.statistics-graph {
+	background-color: #333333;
 	display: flex;
-	flex-direction: column;
-	width: 20%;
+	height: 100%;
+	width: 80%;
+}
+/* Общий стиль для блока */
+.sidebar-stat {
+    display: flex; /* Включаем flexbox */
+    flex-direction: column; /* Элементы располагаются в колонку */
+    gap: 15px; /* Расстояние между элементами */
+    width: 20%; /* Ширина блока (можно изменить при необходимости) */
+    padding: 25px;
+    background-color:#444; /* Темный фон */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для блока */
+}
+
+/* Поля ввода */
+.sidebar-stat input[type="date"] {
+    width: 95%; /* Поля занимают 98% ширины блока */
+    padding: 10px;
+    border: 1px solid #ccc; /* Обводка */
+    border-radius: 4px; /* Сглаженные углы */
+    background-color: #333; /* Темный фон */
+    color: #fff; /* Белый текст */
+    font-size: 14px;
+}
+
+/* Чекбоксы */
+.sidebar-stat .checkbox-stat {
+    margin-right: 10px; /* Отступ между чекбоксом и текстом */
+}
+
+.stat-buttons {
+    display: flex; /* Размещаем кнопки в ряд */
+    justify-content: space-between; /* Равномерное распределение кнопок */
+    align-items: center; /* Вертикальное центрирование */
+    gap: 10px; /* Отступ между кнопками */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+/* Кнопки */
+.button-stat {
+    flex: 1; /* Равномерное распределение ширины кнопок */
+    max-width: 48%; /* Ограничиваем ширину кнопок */
+    text-align: center;
+    padding: 10px 0; /* Высота кнопок */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Кнопки */
+.sidebar-stat .button-stat {
+    padding: 10px;
+    border: none; /* Убираем границы */
+    border-radius: 4px; /* Сглаженные углы */
+    font-size: 16px;
+	width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Анимация при наведении */
+    color: #fff; /* Белый текст */
+}
+
+/* Кнопка "Применить" */
+.sidebar-stat .button-stat[type="submit"] {
+    background-color: orange; /* Оранжевый цвет */
+}
+
+.sidebar-stat .button-stat[type="submit"]:hover {
+    background-color: #e69500; /* Затемненный оранжевый при наведении */
+}
+
+/* Кнопка "Сбросить" */
+.sidebar-stat .button-stat[type="reset"] {
+    background-color: #ff6347; /* Морковный цвет */
+}
+
+.sidebar-stat .button-stat[type="reset"]:hover {
+    background-color: #e53935; /* Красноватый цвет при наведении */
+}
+
+/* Строка для кнопок */
+.sidebar-stat .button-stat:last-of-type {
+    margin-left: 10px; /* Расстояние между кнопками */
+}
+
+/* Контейнер для кнопок */
+.sidebar-stat {
+    display: flex;
+    flex-direction: column; /* Элементы располагаются в колонку */
+}
+
+.sidebar-stat button[type="submit"],
+.sidebar-stat button[type="reset"] {
+    display: inline-block;
+    width: 90%; /* У каждой кнопки половина ширины блока */
 }

@@ -29,7 +29,7 @@ body {
 
 /* Боковая панель */
 .sidebar {
-    width: 25%;
+    width: 22%;
     /* Ширина боковой панели */
     background-color: #333333;
     display: flex;
@@ -37,6 +37,7 @@ body {
     align-items: center;
     padding: 50px;
     box-sizing: border-box;
+    margin-right: 1%;
     height: 100%;
     /* Растягиваем боковую панель на всю высоту контейнера */
 }
@@ -80,8 +81,8 @@ body {
     align-items: flex-start ;
     justify-content:center ;
 
-    width: 72%;
-    background: #181818;
+    width: 77%;
+    background: #252525;
 }
 
 .tab-content {
